@@ -1,16 +1,129 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+  <style>
+    .item1 { grid-area: item1; }
+    .item2 { grid-area: item2; }
+    .item3 { grid-area: item3; }
+    .item4 { grid-area: item4; }
+    .item5 { grid-area: item5; }
+    .item6 { grid-area: item6; }
+    .item7 { grid-area: item7; }
+    .item8 { grid-area: item8; }
+    .item9 { grid-area: item9; }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'item1 item2 item4 item5 item7'
+        'item1 item3 item4 item6 item7'
+        'item8 item8 item9 item9 item9';
+      gap: 5px;
+      background-color: #ffffff;
+      
+      padding: 5px;
+      grid-template-columns: repeat(5, 1fr);
+      place-content: start;
+      /* place-items: start; */
+    }
+
+    .grid-container > div {
+      background-color: rgba(255, 255, 255);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      border:3px solid black;
+      border-radius: 5px;
+    }
+
+    .grid-container label {
+      margin-bottom: 5px;
+      font-size: 2rem;
+       font-weight: 600;
+    }
+
+    .grid-container textarea {
+      flex: 1; /* Take up the remaining space */
+      padding: 8px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      text-align: center;
+      font-size: 16px;
+      /* resize: vertical; Allow vertical resizing */
+    }
+
+    .item8 {
+      grid-column: span 2.5;
+    }
+
+    .item9 {
+      grid-column: span 2.5;
+    }
+    @media (max-width: 767px) {
+        .grid-container {
+      background-color: #ffffff !important;
+
+    }
+
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="text-center text-5xl my-10 font-bold">Business Model Canvas Maker</h1>
+
+  <div class="grid-container flex flex-col lg:grid mx-10 lg:mx-0  space-y-6 lg:space-y-0 lg:items-start     items-center      text-3xl">
+    <div class="item1 w-11/12 lg:w-full h-full ">
+      <label for="keyPartners">Key Partners</label>
+      <textarea id="keyPartners" name="keyPartners" placeholder="The external partners and suppliers that a business relies on to create and deliver its value proposition."></textarea>
+    </div>
+
+    <div class="item2 w-11/12 lg:w-full h-full ">
+      <label for="keyActivities">Key Activities</label>
+      <textarea id="keyActivities" name="keyActivities" placeholder="The key tasks that a business needs to perform in order to deliver its value proposition."></textarea>
+    </div>
+
+    <div class="item3 w-11/12 lg:w-full h-full ">
+      <label for="keyResources">Key Resources</label>
+      <textarea id="keyResources" name="keyResources" placeholder="The assets and resources that a business needs to create and deliver its value proposition."></textarea>
+    </div>
+
+    <div class="item4 w-11/12 lg:w-full h-full ">
+      <label for="valuePropositions">Value Propositions</label>
+      <textarea id="valuePropositions" name="valuePropositions" placeholder="The products or services that a business offers to solve customers’ problems or fulfill their needs."></textarea>
+    </div>
+
+    <div class="item5 w-11/12 lg:w-full h-full ">
+      <label for="customerRelationships">Customer Relationships</label>
+      <textarea id="customerRelationships" name="customerRelationships" placeholder="The types of relationships that a business establishes and maintains with its customers."></textarea>
+    </div>
+
+    <div class="item6 w-11/12 lg:w-full h-full ">
+      <label for="channels">Channels</label>
+      <textarea id="channels" name="channels" placeholder="The various ways that a business delivers its value proposition to its customers."></textarea>
+    </div>
+
+    <div class="item7 w-11/12 lg:w-full h-full ">
+      <label for="customerSegments">Customer Segments</label>
+      <textarea id="customerSegments" name="customerSegments" placeholder="The different groups of people or organizations that a business aims to serve."></textarea>
+    </div>
+
+    <div class="item8 w-11/12 lg:w-full h-full ">
+      <label for="costStructure">Cost Structure</label>
+      <textarea id="costStructure" name="costStructure" placeholder="The costs and expenses associated with creating and delivering a business’s value proposition."></textarea>
+    </div>
+
+    <div class="item9 w-11/12 lg:w-full h-full ">
+      <label for="revenueStream">Revenue Stream</label>
+      <textarea id="revenueStream" name="revenueStream" placeholder="The ways that a business generates revenue from its value proposition."></textarea>
+    </div>
+  </div>
+
+</body>
 </html>
